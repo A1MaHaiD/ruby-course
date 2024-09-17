@@ -9,7 +9,7 @@ puts fence_length
 # =====================================================================
 puts 'Enter count'
 count = gets.strip.to_i
-tariff = 7.8
+tariff = 7.8  
 price = tariff * count
 puts price2
 puts 'Enter cash'
