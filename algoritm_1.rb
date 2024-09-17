@@ -46,3 +46,14 @@
 # puts "x = #{x}, y = #{y}"
 
 # task 6
+# print 'a = '
+# a = gets.to_f
+# print 'b = '
+# b = gets.to_f
+# print 'alfa = '
+# alfa = gets.to_f
+# s = a * b * Math.sin(alfa) / 2
+# puts s
+
+# task 7
+
