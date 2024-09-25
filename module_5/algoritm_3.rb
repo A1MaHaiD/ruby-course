@@ -77,6 +77,22 @@
 
 # Task 8
 
+# print "Enter number: "
+# n = gets.strip.to_i
+# sharp = "#"
+# count = n
+# while count > 0
+#   print("#{count} ")
+#   count1 = 0
+#   while count1 < count
+#     print (sharp)
+#     count1 += 1
+#   end
+#   puts
+#   count -= 1
+# end
+
+# Task 9
 
 
 
