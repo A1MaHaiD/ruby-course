@@ -23,6 +23,61 @@
 
 # Task 3
 
+# print "Enter b = "
+# b = gets.strip.to_i
+# for i in (1..b).step(2)
+#   print("#{i} ")
+# end
+
+# Task 4
+
+# print "Enter factorial number: "
+# n = gets.strip.to_i
+# factorial = 1
+# for i in (1..n)
+#   factorial *= i
+# end
+# puts factorial
+
+# Task 5
+
+# print "Enter marks amount: "
+# n = gets.strip.to_i
+# avg = 0
+# for i in (1..n)
+#   print "Enter your mark: "
+#   mark = gets.strip.to_f
+#   avg += mark
+# end
+# puts "Avarage mark is #{avg/n}"
+
+# Task 6
+
+# count = 0
+# print "Enter real weight = "
+# weigth = gets.strip.to_f
+# real_weigth = weigth
+# while real_weigth <= 100
+#   count += 1
+#   print "Enter real weight = "
+#   weigth = gets.strip.to_f
+#   real_weigth += weigth
+# end
+# puts count
+
+# Task 7
+
+# print "Enter you old: "
+# age = gets.strip.to_i
+# age % 2 == 0 ? start = 0 : start = 1
+# while start <= age
+#   print ("#{start} ")
+#   start += 2
+# end
+
+# Task 8
+
+
 
 
 # Homework 5.1
