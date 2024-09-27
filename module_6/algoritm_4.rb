@@ -71,4 +71,62 @@
 
 # Task 5
 
+# def cylinder_volume(radius, height)
+#  return volume = Math::PI * radius ** 2 * height
+# end
 
+# print "Enter r1 = "
+# r1 = gets.strip.to_i
+# print "Enter h1 = "
+# h1 = gets.strip.to_i
+# print "Enter r2 = "
+# r2 = gets.strip.to_i
+# print "Enter h1 = "
+# h2 = gets.strip.to_i
+
+# v1 = cylinder_volume(r1, h1)
+# v2 = cylinder_volume(r2, h2)
+# if(v1>v2) then puts("The first cylinder is larger")
+#   elsif(v2>v1) then puts("The second cylinder is larger")
+#     else puts("“The cylinders are of equal size")
+#     end
+
+# Task 6
+
+# def triangle_check(side1, side2, side3)
+#   return rez = side1 < side2 + side3 ? true : false
+# end
+
+# print "Enter side a = "
+# a = gets.strip.to_i
+# print "Enter side b = "
+# b = gets.strip.to_i
+# print "Enter side c = "
+# c = gets.strip.to_i
+
+# rez1 =  triangle_check(a, b, c)
+# rez2 =  triangle_check(b, a, c)
+# rez3 =  triangle_check(c, b, a)
+
+# puts(rez1 && rez2 && rez3)
+
+# Task 7
+
+# def suma(num1, num2, num3)
+#   if num1 == num2 then sum = 0
+#   end
+#   if num1 == num3 then sum = 0
+#   end
+#   num2 == num3 ? sum = 0 : sum = num1 + num2 + num3
+# end
+
+# print "Enter a = "
+# a = gets.strip.to_i
+# print "Enter b = "
+# b = gets.strip.to_i
+# print "Enter c = "
+# c = gets.strip.to_i
+# result = suma(a, b, c)
+# puts("Result sum: #{result}")
+
+# Task 8
