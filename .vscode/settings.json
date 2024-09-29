@@ -1,3 +1,20 @@
 {
-    "editor.formatOnPaste": true
+    "workbench.colorTheme": "Material Theme Lighter",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "workbench.startupEditor": "none",
+    "javascript.preferences.quoteStyle": "double",
+    "typescript.preferences.quoteStyle": "double",
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDelete": false,
+    "window.titleBarStyle": "custom",
+    "explorer.expandSingleFolderWorkspaces": false,
+    "terminal.integrated.cursorBlinking": true,
+    "editor.cursorBlinking": "expand",
+    "editor.fontFamily": "Jetbrains Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.smoothScrolling": true,
+    "editor.mouseWheelZoom": true
 }
