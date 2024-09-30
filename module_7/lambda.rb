@@ -171,7 +171,7 @@
 # Hometask 7.2
 
 # lambda1 = lambda {|number| number.to_s.length >= 6 ? "Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним" : number = number.to_s.length }
-lambda1 = -> (number){number.to_s.length >= 6 ? "Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним" : number = number.to_s.length }
+# lambda1 = -> (number){number.to_s.length >= 6 ? "Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним" : number = number.to_s.length }
 #   if ((number = number.to_s.length) >= 6) 
 #      return ("Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним")
 #      else return ("#{number}")
@@ -181,4 +181,28 @@ lambda1 = -> (number){number.to_s.length >= 6 ? "Недопустима кіль
 # (number / 10_000 * 10) < 10 ? puts "Кідькість розрядів #{5}" : puts ("рядок Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним") 
 # lambda1.call(15) => 2
 # lambda1.call(123456) => рядок Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним
-p lambda1.(1234567)
+
+# lambda1 = lambda do |number|
+#   count = 0
+#   temp = number
+#   div = 1
+#   while temp > 10
+#     div *= 10
+#     temp /= 10
+#   end
+#   while number > 0
+#     number %= div
+#     div /= 10
+#     count+=1
+#   end
+#   number = count
+#   if ((number) >= 6) 
+#       return ("Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним")
+#      else return number
+#   end
+# end
+
+# p lambda1.(1)
+
+# Task 7.3
+
