@@ -150,14 +150,6 @@
 # variable = m1(pr)
 # p variable
 
-# def sum(&block)
-#   block.call 4
-#   block.call 0
-#   block.call -12
-# end
-
-# result = sum {|number| number += number; puts("Result #{number >= 0 ? number : Math.sqrt(number)}")}
-
 # Hometask 7.1
 
 # def sum
@@ -176,4 +168,17 @@
 # end
 # result = sum(&block)
 
+# Hometask 7.2
 
+# lambda1 = lambda {|number| number.to_s.length >= 6 ? "Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним" : number = number.to_s.length }
+lambda1 = -> (number){number.to_s.length >= 6 ? "Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним" : number = number.to_s.length }
+#   if ((number = number.to_s.length) >= 6) 
+#      return ("Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним")
+#      else return ("#{number}")
+#   end
+# end
+
+# (number / 10_000 * 10) < 10 ? puts "Кідькість розрядів #{5}" : puts ("рядок Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним") 
+# lambda1.call(15) => 2
+# lambda1.call(123456) => рядок Недопустима кількість розрядів. Число повинно бути не більше, ніж 5-розрядним
+p lambda1.(1234567)
