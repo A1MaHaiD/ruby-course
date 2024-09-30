@@ -216,4 +216,9 @@
 
 # Task 7.4
 
-
+# def m1(&block)
+#   if block_given?
+#     block
+#   else "Method without block"
+#   end
+# end  
