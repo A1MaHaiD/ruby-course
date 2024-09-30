@@ -206,3 +206,14 @@
 
 # Task 7.3
 
+# def check_password(f , s)
+#   proc {|first,second| f == first && s == second ? true: false}
+# end
+
+# admin = check_password("u1", "p1")
+# puts admin.call("u1", "p1")
+# puts admin.call("u")
+
+# Task 7.4
+
+
