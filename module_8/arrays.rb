@@ -91,3 +91,79 @@ puts (calc_avg(1, 2, 3, 4, 5)) # 3.0
 puts (calc_avg(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) # 5.5
 
 
+# Hash
+
+dict = {"one" => "один", "two" => "два"}
+dict = {"one": "один", "two": "два"}
+
+dict = Hash.new()
+dict = Hash.new("Hello")
+
+puts dict["one"] # один
+puts dict["three"] # nil
+
+dict.default = "Hello"
+puts dict["three"] # Hello
+
+# Hash methods
+
+dict.delete # Видаляє елемент по ключу
+dict.delete_if # Видаляє елемент згідно умови
+dict.shift # Видаляє перший елемент і повертає його як результат
+
+dict.each         # Ітератори для
+dict.each_key     #               обходу всіх
+dict.each_value   #                           елементів хешу
+
+dict.key?     # Повертає true, якщо ключ чи значення
+dict.value?   #                                      існують в хеші відповідно
+
+dict.keys   # Повертає масив із ключами елементів хешу
+dict.values # Повертає масив із значеннями елементів хешу
+
+dict.values_at  # Повертає масив лише із елементів із заданими ключами
+dict.length     # Повертає кількість елементів хешу
+dict.merge      # Метод для об'єднання хешів в один
+
+dict = {a: 10, b: 20, c: 30, d: 40}
+dict.length() # 4
+dict.delete(:a) # 10
+dict.delete(:z) # nil
+dict.key?(:b) # true
+dict.key?(:z) # false
+dict.delete_if {|k, v| v > 25} # {:b => 20}
+dict[:z] = 100  # {:b =>  20, :z  =>  100}
+dict.value?(20) # true
+
+dict.each {|k, v| puts "#{k} is #{v}"}
+#--------------------------------------------------------------------------------------
+# b is 20
+# z is 100
+
+(start..end).to_a()     # Всі числа в діапазоні від start до end  включно
+(start...end).to_a()    # Всі числа в діапазоні від с start до end не влючаючи end
+
+(1..5).to_a()       # [1, 2, 3, 4, 5]
+(1...5).to_a()      # [1, 2, 3, 4]
+('a'..'f').to_a()   # ["a", "b", "c", "d", "e", "f"]
+
+def odd_even(marix)
+  # marix = 0
+  marix.map do |set|
+    p set {"odd": odd, "even": even}
+    # set.each {|digit| :odd => set.index, :even => digit}
+  end
+end
+arr = [[1,2,3],[4,5,6],[7,8,9]]
+p odd_even(arr)
+
+def odd_even(marix)
+  odd = even = 0
+  marix.each do |x|
+    x.each do |y|
+      y % 2 == 0 ? even += 1 : odd += 1
+    end
+  end
+  {"odd": odd, "even": even}
+end
+
