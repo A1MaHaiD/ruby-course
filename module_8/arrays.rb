@@ -55,4 +55,39 @@ def var_args(a,b,c = 1,*d, e, f)
   puts "required f #{f}" # required f 9
 end
 
+# Work with Array
+
+array = [10, 20, 30, 40, 50]
+for i in 0..array.size do
+  puts array[i]
+end
+
+array = [10, 20, 30, 40, 50]
+for element in array do
+  puts element
+end
+
+array.each do |element|
+  puts element
+end
+
+array.each{|element| puts element}
+
+array.each_with_index do |value,index|
+  puts "index: #{index} for #{value}"
+end
+
+array.map do |element|
+  element * 2
+end
+
+def calc_avg(*numbers)
+ avg = 0.0
+ numbers.each {|item| avg += item}
+ avg = avg / numbers.length
+end
+
+puts (calc_avg(1, 2, 3, 4, 5)) # 3.0
+puts (calc_avg(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) # 5.5
+
 
