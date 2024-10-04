@@ -48,5 +48,23 @@ end
   puts("Кількість негативних чисел: #{count}")
 
 # Task 4
+n = 6
+mas = []
+
+n.times {
+  print "Введіть ціле число: "
+  mas.push(gets.strip.to_f)
+}
+max = mas[0]
+
+(1...mas.length).step(1) {|i| max = mas[i] if mas[i] > max} 
+
+# mas.each do |next_item|
+#   max < next_item ? max = next_item : max
+# end
+
+puts ("Максимальне число в масиві #{mas}: #{max}")
+
+# Task 5
 
 
