@@ -67,4 +67,59 @@ puts ("Максимальне число в масиві #{mas}: #{max}")
 
 # Task 5
 
+# Homework 8.1
+
+def count_words(sentence)
+  sentence.split(" ").count
+end
+
+puts(count_words("Hello World")) # 2
+puts(count_words("This is a ball")) # 4
+
+# Homework 8.2
+
+def count_repetitions(arr, el)
+  count = 0
+  arr.each { |element|
+  if element == el then count += 1 
+  end
+  }
+  print count
+end
+
+puts(count_repetitions([1,1,5,2,2,3,3,5,5], 5)) # 3
+puts(count_repetitions([3,3,1,2,0], 5)) # 0
+
+# Homework 8.3
+
+def matrix_params(arr)
+  m = 0
+  u = 0
+  o = 0
+
+  arr.each_with_index do |row, i|
+    row.each_with_index do |val, j|
+      # p "i #{i}"
+      # p "row #{row}"
+      # p "j #{j}"
+      # p val
+      if i == j
+        m += val
+        # p "m #{m}"
+      elsif i < j
+        u += val
+        # p "u #{u}"
+      else
+        o += val
+        # p "#{o}"
+      end
+    end
+  end
+
+  {"m" => m, "u" => u, "o" => o}
+end
+
+puts(matrix_params([[1,2,3],[4,5,6],[7,8,9]])) # {"m"=>15, "u"=>11, "o"=>19}
+puts(matrix_params([[1,2,2],[3,1,2],[3,3,1]])) # {"m"=>3, "u"=>6, "o"=>9}
+
 
