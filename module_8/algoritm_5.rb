@@ -51,21 +51,41 @@ end
 n = 6
 mas = []
 
+
+def max_from_array(n , mas)
 n.times {
   print "Введіть ціле число: "
   mas.push(gets.strip.to_f)
 }
 max = mas[0]
-
 (1...mas.length).step(1) {|i| max = mas[i] if mas[i] > max} 
-
+return max
+end
 # mas.each do |next_item|
 #   max < next_item ? max = next_item : max
 # end
 
-puts ("Максимальне число в масиві #{mas}: #{max}")
+# puts ("Максимальне число в масиві #{mas}: #{max}")
 
 # Task 5
+
+n = 12
+mass = []
+max = max_from_array(n, mass)
+count = 0
+# mass.each { |val|
+#   if val >= (max * 0.7)
+#     count += 1
+#     end
+# }
+count = mass.filter {|val| 
+  val > max * 0.7
+}.size
+puts ("Кількість елементів: #{count}")
+
+# Task 6
+
+
 
 # Homework 8.1
 
