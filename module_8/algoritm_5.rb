@@ -188,6 +188,30 @@ puts max
 
 # Task 10
 
+def check_palidrome()
+  print "Введіть ціле число "
+  n = gets.strip.to_i
+  n_copy = n
+  mass = []
+  i = 0
+  while n != 0
+    mass[i] = n % 10
+    n /= 10
+    i += 1
+  end
+  count = mass.length / 2
+  is_palidrome = true
+  (0...count).step(1){|i|
+    i+=1
+    if  mass[i] != mass[mass.length-1-i]
+      is_palidrome = false
+    break
+    end
+  }
+  is_palidrome ? puts("#{n_copy} is a palindrome") : puts("#{n_copy} is not a palindrome")
+end
+
+check_palidrome()
 
 # Homework 8.1
 
@@ -243,5 +267,3 @@ end
 
 puts(matrix_params([[1,2,3],[4,5,6],[7,8,9]])) # {"m"=>15, "u"=>11, "o"=>19}
 puts(matrix_params([[1,2,2],[3,1,2],[3,3,1]])) # {"m"=>3, "u"=>6, "o"=>9}
-
-
