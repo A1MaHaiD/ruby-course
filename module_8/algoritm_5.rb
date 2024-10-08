@@ -156,6 +156,37 @@ puts ("Сума цифр вашого числа = #{sum}")
 
 # Task 9
 
+def arithmetic_progression()
+  print "Введіть початкове число "
+  first_element = gets.strip.to_i
+  print "Введіть крок прогресії "
+  step = gets.strip.to_i
+  mas = []
+  mas << first_element
+  sum = first_element
+  (1...9).step(1){|i|
+    mas[i] = mas[i-1] + step
+  }
+  mas.each {|el| sum += el}
+  sum
+end
+
+puts arithmetic_progression()
+
+# Task 9.1
+
+puts "Введіть перший елемент"
+first_element = gets.strip.to_i
+puts "Введіть різницю"
+step = gets.strip.to_i
+mass = []
+mass.push(first_element)
+(1..9).step(1){|i| mass[i] = mass[i-1] + step}
+puts mass
+max = mass.reduce(0) {|sum, num| sum + num}
+puts max
+
+# Task 10
 
 
 # Homework 8.1
