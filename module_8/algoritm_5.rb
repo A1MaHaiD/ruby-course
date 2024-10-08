@@ -139,6 +139,22 @@ puts "Знайдено значення #{max}"
 
 # Task 8
 
+print "Введіть число "
+n = gets.strip.to_i
+mas = []
+i = 0
+while n != 0
+  mas[i] = n % 10 
+  n /= 10
+  i += 1
+end
+sum = 0
+  mas.each {|i|
+  sum += i
+}
+puts ("Сума цифр вашого числа = #{sum}")
+
+# Task 9
 
 
 
