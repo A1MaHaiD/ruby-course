@@ -51,15 +51,15 @@ end
 n = 6
 mas = []
 
-
 def max_from_array(n , mas)
 n.times {
   print "Введіть ціле число: "
   mas.push(gets.strip.to_f)
-}
+}length
 max = mas[0]
-(1...mas.length).step(1) {|i| max = mas[i] if mas[i] > max} 
-return max
+i_max = 0
+(1...mas.length).step(1) {|i| max = mas[i] && i_max = i if mas[i] > max} 
+return mas[]
 end
 # mas.each do |next_item|
 #   max < next_item ? max = next_item : max
@@ -84,6 +84,41 @@ count = mass.filter {|val|
 puts ("Кількість елементів: #{count}")
 
 # Task 6
+
+mas = []
+n = 8
+n += 1
+
+def min_max_swap(n, mas)
+  n.times do
+    print "Введіть ціле число: "
+    mas.push(gets.strip.to_f)
+  end
+
+  min = mas[0]
+  i_min = 0
+  max = mas[0]
+  i_max = 0
+
+  mas.each_with_index do |next_item, index|
+    if next_item > max
+      max = next_item
+      i_max = index
+    end
+    if next_item < min
+      min = next_item
+      i_min = index
+    end
+  end
+
+  mas[i_min], mas[i_max] = mas[i_max], mas[i_min]
+
+  mas.each { |el| puts el }
+end
+
+min_max_swap(n, mas)
+
+# Task 7
 
 
 
