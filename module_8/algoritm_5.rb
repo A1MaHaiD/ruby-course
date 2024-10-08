@@ -53,12 +53,12 @@ mas = []
 
 def max_from_array(n , mas)
 n.times {
-  print "Введіть ціле число: "
+  print "Введіть дійсне число: "
   mas.push(gets.strip.to_f)
 }length
 max = mas[0]
 i_max = 0
-(1...mas.length).step(1) {|i| max = mas[i] && i_max = i if mas[i] > max} 
+(1...mas.length).step(1) {|i| max = mas[i] if mas[i] > max} 
 return mas[]
 end
 # mas.each do |next_item|
@@ -91,7 +91,7 @@ n += 1
 
 def min_max_swap(n, mas)
   n.times do
-    print "Введіть ціле число: "
+    print "Введіть дійсне число: "
     mas.push(gets.strip.to_f)
   end
 
@@ -119,6 +119,26 @@ end
 min_max_swap(n, mas)
 
 # Task 7
+
+n = 10
+mass = []
+n.times {
+  print "Введіть ціле число "
+  mass << gets.strip.to_i
+}
+
+ind = 1
+while mass[ind] % 3 != 0  && ind < mass.length-2
+  ind += 2
+end
+
+max = mass[ind]
+(ind...mass.length).step(2) {|i| max = mass[i] if mass[i] > max && mass[i] % 3 == 0}
+
+puts "Знайдено значення #{max}"
+
+# Task 8
+
 
 
 
