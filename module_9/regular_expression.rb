@@ -74,3 +74,19 @@ re.match?("Hello")  # true
 /e/ =~  "Hello"   # 1
 "Hello" =~  /e/   # 1
 "Hello" =~  /b/   # nil
+
+def palindrome?(str)
+    str = str.gsub(" ", "").downcase
+    str == str.reverse
+end
+
+p palindrome?("козак з казок")
+
+def remove_vowels(str)
+    pattern = /[a,e,o,i,u]/i
+    str.gsub(pattern,"")
+end
+
+p remove_vowels("Hello World!")
+
+
