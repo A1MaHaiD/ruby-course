@@ -22,8 +22,8 @@ class CarWithCount
     end
 end
 
-first_car = Car.new("red",150)
-second_car = Car.new("green",200)
+first_car = CarWithCount.new("red",150)
+second_car = CarWithCount.new("green",200)
 
 puts Car.class_variable_get('@@count')
 
@@ -70,3 +70,119 @@ end
 name
 puts $global_var
 
+#   METHODS
+
+class CarWithMove
+    def initialize(color,speed)
+        @color = color
+        @max_speed = speed
+    end
+
+    def move(direction)
+        puts "I'm going to #{direction}"
+    end
+end
+
+first_car = CarWithMove.new("red", 150)
+second_car = CarWithMove.new("green", 200)
+first_car.move('ahead')
+second_car.move('right')
+
+class CarWithColor
+    def initialize(color,speed)
+        @color = color
+        @max_speed = speed
+    end
+
+    def move(direction)
+        puts "Color with color #{@color} #{direction}"
+    end
+end
+
+first_car = CarWithColor.new("red",150)
+first_car.move('ahead') #   Car with color red going ahead
+
+# Using method inside class {def self.<class name> end}
+
+class CarWithSelf
+    @@count = 0
+    def self.total
+        @@count
+    end
+    def initialize(color,speed)
+        @@count += 1
+        @color = color
+        @max_speed = speed
+    end
+end
+
+first_self_car = CarWithSelf 'Green', 120
+second_self_car = CarWithSelf.new('Blue', 150)
+puts CarWithSelf.total
+
+#   Метод екземпляру
+
+class Ghost1
+    def reflect
+        self
+    end
+end
+
+g = Ghost1.new
+g.reflect == g      #   true
+
+#   Метод класу
+
+class Ghost2
+    def self.reflect
+        self
+    end
+end
+
+Ghost2.reflect == Ghost2    #   true
+
+#   Метод екземпляру та локальна змінна
+
+class Excample
+    def do_something
+        m1 = "variable"
+        puts m1
+        puts self.m1
+    end
+
+    def m1
+        "method"
+    end
+end
+
+Excample.new.do_something   #   variable
+                            #   method
+                       
+class Person
+    @@persons = []
+    def self.valid_string?(arg)
+        return false unless arg.is_a?(String) && arg.lenght == 10
+
+        arg.each_char do |element|
+            return false if element.ord < '0'.ord || element.ord > '9'.ord
+        end
+        true
+    end
+
+    def initialize(number)
+        if Person.valid_string?(number)
+            @@number = number
+            @@persons.append self
+        end
+    end
+
+    def self.all_persons
+        @@persons
+    end
+end
+
+per1 = Person.new("wer")
+per = Person.new("1234567891")
+per3 = Person.new("345")
+per4 = Person.new("12345678910")
+puts Person.all_persons.length
