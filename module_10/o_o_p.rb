@@ -186,3 +186,85 @@ per = Person.new("1234567891")
 per3 = Person.new("345")
 per4 = Person.new("12345678910")
 puts Person.all_persons.length
+
+# Гетери та Сетери
+
+class Car
+    def initialize(color,speed)
+        @color = color
+        @max_speed = speed
+    end
+end
+
+car = Car.new('white', 100)
+car.@color = 'blue'
+
+car.instance_variable_set('@color','blue')
+puts "car color = #{car.instance_variable_get('@color')}"
+
+# Використання без instance_variable
+
+class Car
+    def initialize(color,speed)
+        @color = color
+        @max_speed = speed
+    end
+
+    def get_color
+        @color
+    end
+    def set_color(color)
+        @color = color
+    end
+end
+
+car = Car.new('red', 20)
+car.set_color('white')
+puts(car.get_color)
+
+# Використання з атрибутом attr_accessor:color, :max_speed
+
+class Car1
+    attr_accessor :color, :max_speed
+    def initialize(color,speed)
+        @color = color
+        @max_speed = speed
+    end
+end
+
+car = Car1.new('red', 20)
+car.color = 'white'
+puts car.instance_variable_get('@color')
+puts car.color
+
+# Використання констант або імутабл змінних\
+
+class Car2
+    attr_accessor :Color
+    attr_reader :max_speed
+    def initialize(color,speed)
+        @color = color
+        @max_speed = speed
+    end
+end
+
+car = Car2.new('red', 20)
+puts(car.max_speed)
+car.max_speed = 1
+
+# Використання атрибутів тільки для запису, без можливості зчитувати
+
+class Car3
+    attr_accessor :Color
+    attr_reader :max_speed
+    attr_writer :owner
+    def initialize(color,speed)
+        @color = color
+        @max_speed = speed
+    end
+end
+
+car = Car3.new('red', 20)
+car.owner = 'Racer'
+puts car.instance_variable_get('@owner')
+puts car.owner
