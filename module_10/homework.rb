@@ -114,4 +114,27 @@ end
 
 # Hometask 10.4
 
+class Pizza
+  @@count = 0
+  attr_writer :ingredients
+  attr_reader :d, :number
+
+  def initialize(d)
+      @@count += 1
+      @d = d
+      @ingredients = [].push
+      @number = @@count
+  end
+
+  def description
+    "Піца № #{@number} (діагональ = #{@d}) містить [#{@ingredients.join(',')}]."
+  end
+end
+
+pizza1 = Pizza.new(24)
+puts pizza1.description #=> Піца № 1 (діагональ = 24) містить [].
+pizza1.ingredients = ['mushroom']
+puts pizza1.description #=> Піца № 1 (діагональ = 24) містить [mushroom].
+puts pizza1.number ##=> 1
+pizza1.d = 2 #=> помилка NoMethodError
 
