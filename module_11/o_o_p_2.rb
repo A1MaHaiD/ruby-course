@@ -98,7 +98,23 @@ class Rectangle
     @width * @height * destiny
   end
 
-  def self.to_pound
+  def self.to_pound(gram)
+    gram * GRAM_TO_POUND
+  end
+
+  private
+  def self.to_gram(pound)
+    pound * POUND_TO_GRAM
+  end
+
+  public def to_s
+    "#{@width} x #{@height}"
+  end
+
+  def inspect
+    "Width = #{@width}, height = #{@height}"
+  end
+  
 end
 
 # 6:36
