@@ -272,3 +272,76 @@ puts a1 < a2   # true
 puts a1 == a2  # false
 
 # Homework 11.3
+
+class Site
+  HOME_URL = 'https://www.home.com'
+  @@path = []
+  attr_reader :current_url
+
+  def initialize
+    @current_url = HOME_URL
+    @@path << @current_url
+  end
+
+  def go_to(relative_path)
+    sanitized_path = correct(relative_path)
+    new_url = "#{HOME_URL}/#{sanitized_path}".chomp('/')
+    if new_url != @current_url
+      @current_url = new_url
+      @@path << @current_url
+    end
+    @current_url
+  end
+
+  def self.path
+    @@path
+  end
+
+  def <=> (other)
+    return 0 if @current_url == other.current_url
+      first_mention_self = @@path.index(@current_url)
+      first_mention_other = @@path.index(other.current_url)
+      first_mention_self <=> first_mention_other
+  end
+  
+  def ==(other)
+    @current_url == other.current_url
+  end
+
+  def <(other)
+    (@@path.index(@current_url) <=> @@path.index(other.current_url)) == -1
+  end
+
+  def >(other)
+    (@@path.index(@current_url) <=> @@path.index(other.current_url)) == 1
+  end
+
+  def to_s
+    "*----------*\n" \
+    " home: #{HOME_URL}\n" \
+    " current url: #{@current_url}\n" \
+    " history: #{@@path}\n" \
+    "*----------*"
+  end
+
+  def inspect
+    "#{self.class}: #{self.to_s}"
+  end
+
+  private
+  def correct(path)
+    path.gsub(' ', '%20')
+  end
+end
+
+# Приклад використання класу
+a1 = Site.new
+a1.go_to('first 2')
+a1.go_to('second')
+
+a2 = Site.new
+a2.go_to('first')
+
+puts a1.inspect
+puts a2.inspect
+puts Site.path
