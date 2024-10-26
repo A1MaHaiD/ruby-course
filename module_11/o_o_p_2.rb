@@ -114,7 +114,30 @@ class Rectangle
   def inspect
     "Width = #{@width}, height = #{@height}"
   end
-  
+
 end
 
-# 6:36
+pust 'Введіть через кому розміри ділянки'
+xy = gets.strip.split(/\s*,\s*/)
+ar = Rectangle.new(xy[0].to_i, xy[1].to_i)
+puts 'Введіть данні про кількість фарби, яка буде йти на 1 кв. м. площі.
+Спочатку введіть "1" - якщо відома кількіть в грамах, будь-який інший символ -
+якщо відома кількість в фунтах'
+choice = gets.strip
+choice_for_output = choice == '1' ? 'гр' : 'фунтах'
+puts "Тепер введіть кількість в #{choice_for_output} : "
+
+volume = ar.paint_amount(gets.strip.to_f, choice)
+
+puts "Ви хочете отримати відповідь у #{choice_for_output}? (y/n)"
+choice = gets.strip
+
+choice_for_output = choice_for_output == 'гр' ? 'фунтів' : 'гр' if choice != 'y'
+choice_for_output = 'фунтів' if choice == 'y' && choice_for_output == 'фунтах'
+
+if choice_for_output == 'фунтів'
+  volume = Rectangle.to_pound(volume)
+end
+
+puts "Вам потрібно #{volume} #{choice_for_output} фарби для ділянки #{ar}"
+p ar
