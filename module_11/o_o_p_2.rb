@@ -141,3 +141,51 @@ end
 
 puts "Вам потрібно #{volume} #{choice_for_output} фарби для ділянки #{ar}"
 p ar
+
+# Homework 11.1
+
+class Book
+  def initialize(title)
+    @title = title
+  end
+
+  def to_s
+    "Book with title '#{@title}'"
+  end
+
+  def inspect
+    "title: #{@title}"
+  end
+
+end
+
+book = Book.new('Book 1')
+p (book)
+
+# Homework 11.2
+
+class Site
+  HOME_URL = 'https://www.home.com'
+  attr_reader :current_url
+
+  def initialize
+    @current_url = HOME_URL
+  end
+
+  def go_to(relative_path)
+    new_url = "#{HOME_URL}/#{relative_path}".chomp('/')
+    if new_url != @current_url
+      @current_url = new_url
+    end
+    nil
+  end
+
+  def to_s
+    "*----------*\n" \
+    "home: #{HOME_URL}\n" \
+    "current url: #{@current_url}\n" \
+    "*----------*"
+  end
+end
+
+
