@@ -6,3 +6,5 @@ class L1
     puts "Hello from #{self.class.name}"
   end
 end
+
+instance = L1.new
