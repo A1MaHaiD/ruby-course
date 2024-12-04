@@ -58,5 +58,22 @@ end
 
 # Homework 13,3
 
-
+def third_order(max)
+  chance = 0 
+  number = rand(1..max) 
+  begin 
+    puts "What is result #{number} * #{number} * #{number}?" 
+    int = gets.strip.to_i 
+    if int == number**3 
+      puts "Good job" 
+      return 
+    else  
+      chance += 1 
+      raise 'Incorrect answer' if chance < 3 
+    end 
+  rescue 
+    retry if chance < 3 
+  end 
+  puts "Try next time" 
+end
 
