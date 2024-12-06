@@ -23,21 +23,19 @@ def create_student_from_console
 end
 
 
-p Student.new('Fir8st', 'S')
+# p Student.new('Fir8st', 'S')
 
 # p Student.default_student('First', 'Second')
 # p Student.default_student('Fir6st', 'S')
 # create_student('3', 'S7')
 
-# danger_st = Student.new("F6hjd", "Hyuo7")
-# puts danger_st.first_name
+danger_st = Student.new("F6hjd", "Hyuo7")
+puts danger_st.first_name
 
 
 # st = create_student_from_console
 
-# p st.first_name
-
-# begin
+# p st.first_nam
 #   st = create_student('Ft', 'Guu')
 #   dep.add(st)
 #   p dep.find_by_id(5)
