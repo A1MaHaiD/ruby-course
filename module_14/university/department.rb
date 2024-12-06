@@ -39,14 +39,14 @@ end
 
 # dep = Department.new
 # Department.set_title('The best department')
-#
+
 # student1 = Student.new('First', 'Second')
 # p student1
-#
+
 # student1 = Student.new('h78', '89')
-#
+
 # dep.send('add', student1)
-#
+
 # p dep
 
 # 10:00
